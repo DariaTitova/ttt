@@ -1,0 +1,5 @@
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\bin\Debug\TestTak.exe.config
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\bin\Debug\TestTak.exe
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\bin\Debug\TestTak.pdb
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\obj\Debug\TestTak.exe
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\obj\Debug\TestTak.pdb
