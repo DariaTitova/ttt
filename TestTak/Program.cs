@@ -35,28 +35,35 @@ namespace TestApplication
                 string[] dirs = Directory.GetFiles(@s, "*.xml");
                 int numer_files = dirs.Length, check = 0;
 
-                while (check < numer_files)
+                if (numer_files > 0)
                 {
-                    Thread[] threads = new Thread[domainCount];//потоки
-                    for (int i = 0; i < domainCount; i++)
-                        if (check + i < numer_files)
-                        {
-                            threads[i] = new Thread(new ParameterizedThreadStart(Fileread));
-                            threads[i].Start(dirs[check + i]);
-                        }
+                    while (check < numer_files)
+                    {
+                        Thread[] threads = new Thread[domainCount];//потоки
+                        for (int i = 0; i < domainCount; i++)
+                            if (check + i < numer_files)
+                            {
+                                threads[i] = new Thread(new ParameterizedThreadStart(Fileread));
+                                threads[i].Start(dirs[check + i]);
+                            }
 
-                    for (int i = 0; i < domainCount; i++)
-                        threads[i].Join();
+                        for (int i = 0; i < domainCount; i++)
+                            threads[i].Join();
 
-                    check += domainCount;
+                        check += domainCount;
+                    }
+
+                    Console.WriteLine("\n '{0}'- файл с наибольшим количеством успешно десериализованных элементов 'calculation'= {1}  ", max_serialazed_file, max_serialazed);
+
+                    stopWatch.Stop();
+                    TimeSpan ts = stopWatch.Elapsed;
+                    string elapsedTime = String.Format("{0:00}.{1:00}", ts.Seconds, ts.Milliseconds / 10);
+                    Console.WriteLine("\nвремя выполнения программы:    " + elapsedTime);
                 }
-
-                Console.WriteLine("\n '{0}'- файл с наибольшим количеством успешно десериализованных элементов 'calculation'= {1}  ", max_serialazed_file, max_serialazed);
-
-                stopWatch.Stop();
-                TimeSpan ts = stopWatch.Elapsed;
-                string elapsedTime = String.Format("{0:00}.{1:00}", ts.Seconds, ts.Milliseconds / 10);
-                Console.WriteLine("\nвремя выполнения программы:    " + elapsedTime);
+                else
+                {
+                    Console.WriteLine("\nВ данной директории отсутствуют файлы типа xml " );
+                }
 
                 Console.Read();
             }

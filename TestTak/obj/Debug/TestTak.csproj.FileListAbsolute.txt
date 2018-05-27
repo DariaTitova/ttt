@@ -3,3 +3,4 @@ C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak
 C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\bin\Debug\TestTak.pdb
 C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\obj\Debug\TestTak.exe
 C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\obj\Debug\TestTak.pdb
+C:\Users\ВИКТОР\Documents\программирование\TestTak\TestTak\obj\Debug\TestTak.csprojResolveAssemblyReference.cache
